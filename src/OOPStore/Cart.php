@@ -8,7 +8,7 @@ class Cart implements CartInterface
     private $products;
     private $purchase;
 
-    public function __constract(Customer $customer)
+    public function __construct(Customer $customer)
     {
         $this->customer = $customer;
         $this->products = [];            

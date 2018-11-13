@@ -1,7 +1,8 @@
 <?php
 
 namespace OOPStore;
-class Category 
+
+class Category implements CategoryInterface
 {
     private $name;
 
