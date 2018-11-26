@@ -11,12 +11,12 @@ class Category implements CategoryInterface
         $this->name = $name;
     }
     
-    public function setName($name) 
+    public function setName($name): void 
     {
         $this->name = $name;
     }
 
-    public function getName() 
+    public function getName(): string 
     {
         return $this->name;
     }

@@ -2,7 +2,7 @@
 
 namespace OOPStore;
 
-class Store implements StoreInterface
+class Store implements \OOPStore\StoreInterface
 {
     private $products = [];
 
@@ -11,26 +11,22 @@ class Store implements StoreInterface
         return $this->products;
     }
 
-    public function addProduct(Product $product): bool
+    public function addProduct(Product $product): void
     {
         if ($this->hasProduct($product)) {
-            return false;
+            throw new StoreException('Duplicate product');
         }
         
         $this->products[$product->getId()] = $product;
-
-        return true;
     }
 
-    public function removeProduct(Product $product): bool
+    public function removeProduct(Product $product): void
     {
-        if ($this->hasProduct($product)) {
-            unset($this->products[$product->getId()]);
-            
-            return true;
+        if (!$this->hasProduct($product)) {
+            throw new StoreException('Product not found');
         }
 
-        return false;
+        unset($this->products[$product->getId()]);
     }
 
     public function hasProduct(Product $product): bool

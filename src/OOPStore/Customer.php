@@ -17,7 +17,7 @@ class Customer implements CustomerInterface
         $this->email = $email;
     }
 
-    public function setFirstName($firstName)
+    public function setFirstName($firstName): void
     {
         $this->firstName = $firstName;
     }
@@ -27,7 +27,7 @@ class Customer implements CustomerInterface
         return $this->firstName;
     }
 
-    public function setLastName($lastName)
+    public function setLastName($lastName): void
     {
         $this->lastName = $lastName;
     }
@@ -37,7 +37,7 @@ class Customer implements CustomerInterface
         return $this->lastName;
     }
 
-    public function setPassword($password)
+    public function setPassword($password): void
     {
         $this->password = $password;
     }
@@ -47,7 +47,7 @@ class Customer implements CustomerInterface
         return $this->password;
     }
 
-    public function setEmail($email)
+    public function setEmail($email): void
     {
         $this->email = $email;
     }

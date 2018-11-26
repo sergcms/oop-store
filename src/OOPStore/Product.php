@@ -2,7 +2,11 @@
 
 namespace OOPStore;
 
-class Product implements ProductInterface
+use OOPStore\Category;
+use OOPStore\Product;
+use OOPStore\Purchase;
+
+class Product implements \OOPStore\ProductInterface
 {
     private $id;
     private $category;
@@ -18,37 +22,37 @@ class Product implements ProductInterface
         $this->price = $price;
     }
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setCategory(Category $category) 
+    public function setCategory(Category $category): void 
     {
         $this->category = $category;
     }
 
-    public function getCategory() 
+    public function getCategory(): Category 
     {
         return $this->category;
     }
 
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function getName() 
+    public function getName(): string 
     {
         return $this->name;
     }
 
-    public function setPrice()
+    public function setPrice(): void
     {
         $this->price = $price;
     }
 
-    public function getPrice()
+    public function getPrice(): float
     {
         return $this->price;
     }
